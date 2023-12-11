@@ -7,9 +7,9 @@
 </head>
 <body>
   <script>
-    let choice;
-
     function getComputerChoice() {
+      let choice;
+
       randomNumber = Math.floor(Math.random() * 3);
 
       switch (randomNumber) {
@@ -25,6 +25,22 @@
       }
       
       return choice;
+    }
+
+    function playRound(playerSelection, computerSelection) {
+      playerSelection = playerSelection.toLowerCase()
+
+      if (playerSelection != computerSelection) {
+        if (playerSelection === "rock" && computerSelection === "paper") {
+          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;;
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;;
+        } else {
+          return `Computer: ${computerSelection} You: ${playerSelection}, You win`;;
+        }
+      }
     }
   </script>
 </body>
