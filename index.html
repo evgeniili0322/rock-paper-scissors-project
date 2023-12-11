@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper and Scissors</title>
+</head>
+<body>
+  <script>
+    let choice;
+
+    function getComputerChoice() {
+      randomNumber = Math.floor(Math.random() * 3);
+
+      switch (randomNumber) {
+        case 0:
+          choice = "rock";
+          break;
+        case 1:
+          choice = "paper";
+          break;
+        case 2:
+          choice = "scissors";
+          break;
+      }
+      
+      return choice;
+    }
+  </script>
+</body>
+</html>
