@@ -4,59 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper and Scissors</title>
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <script>
-    function getComputerChoice() {
-      let choice;
-
-      randomNumber = Math.floor(Math.random() * 3);
-
-      switch (randomNumber) {
-        case 0:
-          choice = "rock";
-          break;
-        case 1:
-          choice = "paper";
-          break;
-        case 2:
-          choice = "scissors";
-          break;
-      }
-      
-      return choice;
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      playerSelection = playerSelection.toLowerCase()
-
-      if (playerSelection != computerSelection) {
-        if (playerSelection === "rock" && computerSelection === "paper") {
-          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;
-        } else if (playerSelection === "paper" && computerSelection === "scissors") {
-          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;
-        } else if (playerSelection === "scissors" && computerSelection === "rock") {
-          return `Computer: ${computerSelection} You: ${playerSelection}, You lose`;
-        } else {
-          return `Computer: ${computerSelection} You: ${playerSelection}, You win`;
-        }
-      }
-    }
-
-    function game() {
-      for (let i = 0; i < 5; i++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("Enter your choice:");
-        
-        while (computerSelection === playerSelection) {
-          console.log(`Computer: ${computerSelection} You: ${playerSelection}, Ties: replay the round`);
-          playerSelection = prompt("Enter your choice:");
-          computerSelection = getComputerChoice();
-        }
-
-        console.log(playRound(playerSelection, computerSelection));
-      }
-    }
-  </script>
+  <button id="rockbtn" class="rps-button">Rock</button>
+  <button id="paperbtn" class="rps-button">Paper</button>
+  <button id="scissorsbtn" class="rps-button">Scissors</button>
+  <div id="round-result">Click on button to play</div>
+  <div id="score">Your score: 0 - Computer score: 0</div>
 </body>
-</html>
+</html> 
